@@ -20,9 +20,9 @@ function generatePalette(starterPalette) {
         hex: scale[i],
         rgb: chroma(scale[i]).css(),
         rgba: chroma(scale[i])
-           .css()
-           .replace("rgb", "rgba")
-           .replace(")", ",1.0)")
+          .css()
+          .replace("rgb", "rgba")
+          .replace(")", ",1.0)")
       });
     }
   }
@@ -32,8 +32,8 @@ function getRange(hexColor) {
   const end = "#fff";
   return [
     chroma(hexColor)
-       .darken(1.4)
-       .hex(),
+      .darken(1.4)
+      .hex(),
     hexColor,
     end
   ];
@@ -41,9 +41,9 @@ function getRange(hexColor) {
 
 function getScale(hexColor, numberOfColors) {
   return chroma
-     .scale(getRange(hexColor))
-     .mode("lab")
-     .colors(numberOfColors);
+    .scale(getRange(hexColor))
+    .mode("lab")
+    .colors(numberOfColors);
 }
 
 export { generatePalette };
