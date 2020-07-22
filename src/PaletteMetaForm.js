@@ -14,11 +14,13 @@ class PaletteMetaForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true,
+      stage: 'form',
       newPaletteName: ""
     };
     this.handleChange = this.handleChange.bind(this);
-  }
+    this.showEmojiPicker = this.showEmojiPicker.bind(this);
+    this.selectEmojiForSave = this.selectEmojiForSave.bind(this);
+  };
 
 
   componentDidMount() {
@@ -45,22 +47,40 @@ class PaletteMetaForm extends Component {
     this.setState({ open: false });
   };
 
+  showEmojiPicker() {
+    this.setState({stage: 'emoji'});
+  };
+
+  selectEmojiForSave(emoji) {
+    console.log(emoji.native);
+    const newPalette = {
+    paletteName: this.state.newPaletteName, emoji: emoji.native
+    }
+    this.props.handleSubmit(newPalette);
+  };
+
+
   render() {
     const { newPaletteName } = this.state;
     const { hideForm, handleSubmit } = this.props;
     return (
+       <div>
+       <Dialog open={this.state.stage === 'emoji'} onClose={hideForm}>
+         <DialogTitle id="form-dialog-title">Pick a palette emoji</DialogTitle>
+         <Picker onSelect={this.selectEmojiForSave} title='save w/ emoji' theme='auto'/>
+       </Dialog>
          <Dialog
-            open={this.state.open}
+            open={this.state.stage === 'form'}
             onClose={hideForm}
             aria-labelledby="form-dialog-title"
          >
            <DialogTitle id="form-dialog-title">Choose Palette identifier</DialogTitle>
-           <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+           <ValidatorForm onSubmit={this.showEmojiPicker}>
            <DialogContent>
              <DialogContentText>
                Please enter a unique save name for your new beautiful palette.
              </DialogContentText>
-             <Picker />
+
                <TextValidator
                   label='Palette Name'
                   value={newPaletteName}
@@ -83,6 +103,7 @@ class PaletteMetaForm extends Component {
            </DialogActions>
          </ValidatorForm>
          </Dialog>
+       </div>
     );
   }
 
