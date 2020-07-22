@@ -6,9 +6,6 @@ import PaletteFooter from "./PaletteFooter";
 import ColorBox from "./ColorBox";
 import styles from './styles/PaletteStyles'
 
-
-
-
 class SingleColorPalette extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +16,6 @@ class SingleColorPalette extends Component {
    // console.log('kerry');
   }
 
-
   gatherShades(palette, colorToFilterBy) {
     let shades = [];
     let allColors = palette.colors;
@@ -28,15 +24,14 @@ class SingleColorPalette extends Component {
       shades = shades.concat(
          allColors[key].filter(color => color.id === colorToFilterBy)
       )
-    }
+    };
     //use slice to remove very first 50 - white - color in array.//
     return shades.slice(1);
   }
 
   changeFormat(val) {
     this.setState({ format: val });
-  }
-
+  };
 
   render() {
     const { format } = this.state;

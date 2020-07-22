@@ -4,10 +4,6 @@ import {Link} from 'react-router-dom';
 import { withStyles } from "@material-ui/styles";
 import styles from './styles/ColorBoxStyles'
 
-
-
-
-
 class ColorBox extends Component {
   constructor(props) {
     super(props);
