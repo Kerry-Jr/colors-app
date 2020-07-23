@@ -11,6 +11,9 @@ export default {
     "&:hover button": {
       opacity: 1
     },
+    "@media (max-width: 900px)": {
+      width: "100%"
+    },
     "@media (max-width: 500px)": {
       width: "100%"
     }
