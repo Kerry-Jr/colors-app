@@ -1,22 +1,19 @@
-import {DRAWER_WIDTH} from "../constants";
-
+import { DRAWER_WIDTH } from "../constants";
 const drawerWidth = DRAWER_WIDTH;
+
 const styles = theme => ({
   root: {
     display: "flex"
   },
-
-  hide: {
-    display: "none"
-  },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    height: "100vh"
   },
   drawerPaper: {
     width: drawerWidth,
-    display: 'flex',
-    alignItems: 'center'
+    display: "flex",
+    alignItems: "center"
   },
   drawerHeader: {
     display: "flex",
@@ -44,18 +41,18 @@ const styles = theme => ({
     marginLeft: 0
   },
   container: {
-    width: '90%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%'
+    width: "90%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
   buttons: {
-    width: '100%'
+    width: "100%"
   },
   button: {
-    width: '50%'
+    width: "50%"
   }
 });
 
