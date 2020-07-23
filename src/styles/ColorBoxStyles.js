@@ -13,8 +13,17 @@ export default {
     '&:hover button': {
       opacity: 1
     },
+    [sizes.down("lg")]: {
+      width: "25% !important",
+      height: props => (props.showingFullPalette ? '20% !important': '50% !important')
+    },
     [sizes.down("md")]: {
-      width: "50% !important"
+      width: "50% !important",
+      height: props => (props.showingFullPalette ? '10% !important': '50% !important')
+    },
+    [sizes.down("xs")]: {
+      width: "100% !important",
+      height: props => (props.showingFullPalette ? '5% !important': '10% !important')
     }
   },
   copyText: {
