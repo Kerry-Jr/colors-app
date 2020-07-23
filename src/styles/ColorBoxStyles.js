@@ -15,11 +15,11 @@ export default {
     },
     [sizes.down("lg")]: {
       width: "25% !important",
-      height: props => (props.showingFullPalette ? '20% !important': '50% !important')
+      height: props => (props.showingFullPalette ? '20% !important': '33.3333% !important')
     },
     [sizes.down("md")]: {
       width: "50% !important",
-      height: props => (props.showingFullPalette ? '10% !important': '50% !important')
+      height: props => (props.showingFullPalette ? '10% !important': '20% !important')
     },
     [sizes.down("xs")]: {
       width: "100% !important",
@@ -112,7 +112,10 @@ export default {
       textAlign: 'center',
       marginBottom: '0',
       padding: '1rem',
-      textTransform: 'uppercase'
+      textTransform: 'uppercase',
+      [sizes.down("xs")]: {
+        fontSize: "6rem !important"
+      }
     },
     '& p': {
       fontSize: '2rem',
