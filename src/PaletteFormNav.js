@@ -68,7 +68,7 @@ class PaletteFormNav extends Component {
                <ChevronRightIcon />
              </IconButton>
              <Typography variant='h6' color='inherit' noWrap>
-               Create New Palette - you can drag and drop the colors into any arrangement.
+               Create New Palette
              </Typography>
            </Toolbar>
            <div className={classes.navBtns}>

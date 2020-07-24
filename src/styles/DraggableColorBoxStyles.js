@@ -1,3 +1,6 @@
+import sizes from "./sizes";
+
+
 const styles = {
   root: {
     width: '20%',
@@ -10,7 +13,20 @@ const styles = {
     '&:hover svg': {
       color: 'white',
       transform: 'scale(1.25)'
+    },
+    [sizes.down("lg")]: {
+      width: "25% !important",
+      height: "20% !important"
+    },
+    [sizes.down("md")]: {
+      width: "50% !important",
+      height: "10% !important"
+    },
+    [sizes.down("sm")]: {
+      width: "100% !important",
+      height: "5% !important"
     }
+
   },
   boxContent: {
     position: 'absolute',
